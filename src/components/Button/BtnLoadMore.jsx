@@ -1,20 +1,14 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Loader } from 'components/Loader/Loader';
 import { StyledBtnLoadMore } from './BtnLoadMore.styled';
 
-export const BtnLoadMore = ({ loading, onLoadMore, page, totalPages }) => {
+export const BtnLoadMore = ({ onLoadMore, page, totalPages }) => {
   return (
     <StyledBtnLoadMore type="button" onClick={onLoadMore}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          Load more: {'  '}
-          <span>
-            {page} / {totalPages}
-          </span>
-        </>
-      )}
+      Load more: {'  '}
+      <span>
+        {page} / {totalPages}
+      </span>
     </StyledBtnLoadMore>
   );
 };
